@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block page_title %}Edit the story title{% endblock page_title %}
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Save Changes" />
+    </form>
+{% endblock content %}

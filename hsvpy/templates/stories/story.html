@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block page_title %}{{ story }} <a href="{% url "edit-story" story_id=story.id %}">(edit)</a>{% endblock page_title %}
+{% block content %}
+    <ul>
+    {% for para in story.paragraph_set.all %}
+        <li><a href="{% url "edit-paragraph" story_id=story.id para_id=para.id %}">{{ para }}</a></li>
+    {% endfor %}
+        <li>The end for now....</li>
+        <li><a href="{% url "add-paragraph" story_id=story.id %}">Add to this story</a></li>
+    </ul>
+{% endblock content %}

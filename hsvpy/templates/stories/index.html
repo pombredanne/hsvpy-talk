@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block page_title %}List of Stories{% endblock page_title %}
+
+{% block content %}
+    <ul>
+    {% for story in stories %}
+        <li><a href="{%url "show-story" story_id=story.id %}">{{ story }}</a></li>
+    {% endfor %}
+        <li><a href="{%url "add-story" %}">Add your own story</a></li>
+    </ul>
+
+{% endblock content %}

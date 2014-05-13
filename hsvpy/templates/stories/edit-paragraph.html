@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block page_title %}{{ story }}{% endblock page_title %}
+{% block content %}
+    <h2>Editing the paragraph:</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Save Paragraph" />
+    </form>
+{% endblock content %}

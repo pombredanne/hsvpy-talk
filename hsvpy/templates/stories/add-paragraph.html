@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block page_title %}{{ story }}{% endblock page_title %}
+{% block content %}
+
+    {% if story.last10paras.count %}
+        <h2>You are adding a paragraph after:</h2>
+    {% else %}
+        <h2>Start this story off on the right foot!</h2>
+    {% endif %}
+
+    <ul>
+    {% for para in story.last10pararaphs %}
+        <li>{{ para }}</li>
+    {% endfor %}
+    </ul>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Add Paragraph" />
+    </form>
+{% endblock content %}
