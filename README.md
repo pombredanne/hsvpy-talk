@@ -15,8 +15,10 @@ $ cd hsvpy
 $ virtualenv .hsvpy
 $ source .hsvpy/bin/activate                     # leave off the source word for windows
 (.hsvpy)$ pip install -r requirements/local.txt
-$ export DJANGO_SETTINGS=hsvpy.settings.local    # change export to set for windows   
-$ python manage.py syncdb
-$ python manage.py runserver
-$ open your browser and visit http://localhost:8000/stories/
+(.hsvpy)$ export DJANGO_SETTINGS=hsvpy.settings.local    # change export to set for windows   
+(.hsvpy)$ python manage.py syncdb
+(.hsvpy)$ python manage.py runserver
 ```
+
+open your browser and visit http://localhost:8000/stories/
+
